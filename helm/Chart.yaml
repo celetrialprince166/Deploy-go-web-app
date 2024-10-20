@@ -1,0 +1,6 @@
+apiVersion: v2 # The API version of the chart, v2 is the current stable version.
+name: go-web-app # The name of your chart.
+description: A simple Kubernetes web application # A brief description of what your chart does.
+type: application # The type of chart, which is an application in this case.
+version: 0.1.0 # The version of the chart itself.
+appVersion: "1.0" # The version of the application this chart deploys.
