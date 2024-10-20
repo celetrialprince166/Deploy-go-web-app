@@ -51,7 +51,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-apps:{{github.run_id}}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-apps:${{ github.run_id }}
+
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
@@ -63,7 +64,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Update Tag in HelmChart
         run: |
-          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/go-web-app-chart/values.yaml
+          sed -i 's/tag: .*/tag: "'${{ github.run_id }}'"/' helm/go-web-app-chart/values.yaml
       - name: Commit and push changes
         run: |
           git config --global user.email "princeayiku5@gmail.com"
