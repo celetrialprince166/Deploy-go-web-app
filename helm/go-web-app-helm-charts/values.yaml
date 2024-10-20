@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: princeayiku/go-web-apps
-  tag: "v3"
+  tag: "11430078166"
   pullPolicy: IfNotPresent
 
 service:
